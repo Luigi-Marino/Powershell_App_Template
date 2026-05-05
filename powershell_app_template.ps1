@@ -1,7 +1,7 @@
 # Minimal GitHub App Template
 
 # Configuration
-$Repo = ""
+$Repo = "Powershell_App_Template"
 $RepoBase = "https://raw.githubusercontent.com/Luigi-Marino/$Repo/main"
 $ModuleNames = @(
     "template_module.psm1",

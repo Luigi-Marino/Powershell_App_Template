@@ -14,6 +14,7 @@ function Load-RemoteModules {
 
     foreach ($m in $Modules) {
         $url = "$BaseURL/modules/$m"
+        Write-Host($url)
         $code = Invoke-RestMethod $url
 
         $mod = New-Module -ScriptBlock ([ScriptBlock]::Create($code)) -Name $m

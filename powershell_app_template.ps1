@@ -31,5 +31,4 @@ else {
 }
 
 # Entry Point
-Main
 Test-Module

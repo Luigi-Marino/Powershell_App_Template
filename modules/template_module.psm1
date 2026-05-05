@@ -2,4 +2,4 @@ function Test-Module{
     Write-Host("Test Function")
 }
 
-Export-Module Test-Module
+Export-ModuleMember Test-Module

@@ -5,7 +5,6 @@ $Repo = "Powershell_App_Template"
 $RepoBase = "https://raw.githubusercontent.com/Luigi-Marino/$Repo/main"
 $ModuleNames = @(
     "template_module.psm1"
-    #"ModuleB.psm1"
 )
 
 # Module Loader
@@ -13,7 +12,6 @@ function Load-RemoteModules {
     param($BaseURL, $Modules)
 
     foreach ($m in $Modules) {
-        Write-Host $m
         $url = "$BaseURL/modules/$m"
         $code = Invoke-RestMethod $url
 
@@ -32,6 +30,4 @@ else {
 }
 
 # Entry Point
-$url = "$RepoBase/modules/template_module.psm1"
-Write-Host $url
 Test-Module

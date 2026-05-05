@@ -1,13 +1,19 @@
-# Minimal GitHub App Template
+# ============================================================
+# Get-Diagnostics Powershell Script
+# ============================================================
 
-# Configuration
+# ------------------------------------------------------------
+# CONFIGURATION
+# ------------------------------------------------------------
 $Repo = "Powershell_App_Template"
 $RepoBase = "https://raw.githubusercontent.com/Luigi-Marino/$Repo/main"
 $ModuleNames = @(
     "template_module.psm1"
 )
 
-# Module Loader
+# ------------------------------------------------------------
+# MODULE LOADER
+# ------------------------------------------------------------
 function Load-RemoteModules {
     param($BaseURL, $Modules)
 
@@ -20,7 +26,9 @@ function Load-RemoteModules {
     }
 }
 
-# Detect Execution Method
+# ------------------------------------------------------------
+# DETECT EXECUTION METHOD
+# ------------------------------------------------------------
 if ([string]::IsNullOrWhiteSpace($PSScriptRoot)) {
     Load-RemoteModules -BaseUrl $RepoBase -Modules $ModuleNames
 }
@@ -29,5 +37,7 @@ else {
         ForEach-Object { Import-Module $_.FullName -Force }
 }
 
-# Entry Point
+# ------------------------------------------------------------
+# ENTRY POINT
+# ------------------------------------------------------------
 Test-Module

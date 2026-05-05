@@ -32,6 +32,6 @@ else {
 }
 
 # Entry Point
-$url = "$RepoBase/modules/$m/template_module.psm1"
+$url = "$RepoBase/modules/template_module.psm1"
 Write-Host $url
 Test-Module
